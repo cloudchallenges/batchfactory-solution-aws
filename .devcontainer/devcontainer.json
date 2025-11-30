@@ -1,0 +1,22 @@
+{
+    "name": "solution-template",
+    "build": {
+        "context": ".",
+        "dockerfile": "Dockerfile"
+    },
+    "containerEnv": {
+        "MISE_GITHUB_TOKEN": "${localEnv:MISE_GITHUB_TOKEN}"
+    },
+    "postCreateCommand": "scripts/setup.sh",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "christian-kohler.path-intellisense",
+                "tamasfe.even-better-toml",
+                "redhat.vscode-yaml",
+                "hverlin.mise-vscode",
+                "hashicorp.terraform"
+            ]
+        }
+    }
+}

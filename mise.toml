@@ -1,0 +1,11 @@
+[tools]
+python = "3.13"
+pre-commit = "latest"
+terraform = "latest"
+
+[settings]
+experimental = true
+idiomatic_version_file_enable_tools = ["python"]
+
+[hooks]
+enter = "bash ./scripts/enter_project.sh"
