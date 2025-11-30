@@ -1,5 +1,5 @@
 {
-    "name": "solution-template",
+    "name": "batchfactory-solution-aws",
     "build": {
         "context": ".",
         "dockerfile": "Dockerfile"
