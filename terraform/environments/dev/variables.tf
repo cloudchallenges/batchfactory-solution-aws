@@ -5,17 +5,37 @@ variable "aws_region" {
 }
 
 variable "project_prefix" {
-  type    = string
-  default = "batchfactory"
+  description = "Prefix for all resource names"
+  type        = string
+  default     = "batchfactory"
 }
 
 variable "env" {
-  type    = string
-  default = "dev"
+  description = "Environment name (dev, staging, prod)"
+  type        = string
+  default     = "dev"
 }
 
-variable "lambda_artifact" {
-  description = "Path to local zip artifact for the lambda (used for dev)."
+variable "force_destroy" {
+  description = "Allow S3 bucket to be destroyed even if non-empty (useful for dev)"
+  type        = bool
+  default     = true
+}
+
+variable "validator_lambda_artifact" {
+  description = "Path to local zip artifact for the validator Lambda"
   type        = string
-  default     = "../../../artifacts/validator_processor.zip"
+  default     = "../../../artifacts/validator.zip"
+}
+
+variable "processor_lambda_artifact" {
+  description = "Path to local zip artifact for the processor Lambda"
+  type        = string
+  default     = "../../../artifacts/processor.zip"
+}
+
+variable "api_lambda_artifact" {
+  description = "Path to local zip artifact for the API reader Lambda"
+  type        = string
+  default     = "../../../artifacts/api_reader.zip"
 }

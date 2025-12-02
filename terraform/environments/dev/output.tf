@@ -1,19 +1,14 @@
 output "ingest_bucket" {
-  value = module.ingest_bucket.bucket_id
-}
-
-output "ingest_bucket_arn" {
-  value = module.ingest_bucket.bucket_arn
+  description = "S3 bucket for uploading CSV files"
+  value       = module.ingest_bucket.bucket_id
 }
 
 output "jobs_table" {
-  value = module.jobs_table.table_name
+  description = "DynamoDB table for job records"
+  value       = module.jobs_table.table_name
 }
 
-output "lambda_name" {
-  value = module.validator_processor_lambda.lambda_name
-}
-
-output "lambda_arn" {
-  value = module.validator_processor_lambda.lambda_arn
+output "api_endpoint" {
+  description = "API Gateway endpoint for job status"
+  value       = module.api_gateway.api_endpoint
 }

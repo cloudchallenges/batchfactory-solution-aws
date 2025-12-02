@@ -14,9 +14,3 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
-
-variable "acl" {
-  description = "ACL for the bucket"
-  type        = string
-  default     = "private"
-}
