@@ -51,7 +51,7 @@ terraform destroy
 
 ## Project Structure
 
-```
+```shell
 ├── src/                  # Lambda function code
 ├── terraform/            # Infrastructure as Code
 ├── samples/              # Test CSV files
@@ -66,5 +66,4 @@ See [LICENSE](./LICENSE) for details.
 
 If you find this helpful, consider supporting my work ❤️
 
-<a href="https://github.com/sponsors/HYP3R00T"><img src="https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github" alt="Sponsor on GitHub"></a>
-
+[![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-GitHub-ea4aaa?style=for-the-badge&logo=github)](https://github.com/sponsors/HYP3R00T)
