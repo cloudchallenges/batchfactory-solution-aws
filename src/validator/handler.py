@@ -148,20 +148,18 @@ def lambda_handler(event, context):
         )
         return {"status": "failed", "jobId": job_id}
 
-    # Validate timestamp format in first row (sample validation)
+    # Validate timestamp format in all rows
     rows = list(csv.DictReader(io.StringIO(content)))
-    if rows:
-        # Check first non-empty timestamp to validate format
-        for row in rows[:5]:  # Check first 5 rows
-            ts_value = row.get("timestamp", "").strip()
-            if ts_value and not is_valid_timestamp(ts_value):
-                logger.error(f"Invalid timestamp format: {ts_value}")
-                mark_as_failed(
-                    table, job_id,
-                    f"Invalid timestamp format: '{ts_value}'. Expected ISO8601 or Unix epoch.",
-                    bucket, key
-                )
-                return {"status": "failed", "jobId": job_id}
+    for row in rows:
+        ts_value = row.get("timestamp", "").strip()
+        if ts_value and not is_valid_timestamp(ts_value):
+            logger.error(f"Invalid timestamp format: {ts_value}")
+            mark_as_failed(
+                table, job_id,
+                f"Invalid timestamp format: '{ts_value}'. Expected ISO8601 or Unix epoch.",
+                bucket, key
+            )
+            return {"status": "failed", "jobId": job_id}
 
     # CSV is valid - send to SQS for processing
     sqs.send_message(
