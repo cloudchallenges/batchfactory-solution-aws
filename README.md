@@ -2,7 +2,7 @@
 
 A serverless, event-driven CSV processing pipeline on AWS, deployed with Terraform.
 
-📋 [View Challenge](https://hyperoot.dev/challenges/batchfactory-aws) · 📖 [Read Solution Guide](https://hyperoot.dev/solutions/batchfactory-aws)
+📋 [View Challenge](https://hyperoot.dev/challenges/batchfactory) · 📖 [Read Solution Guide](https://hyperoot.dev/solutions/batchfactory)
 
 ## Architecture
 
